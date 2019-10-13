@@ -1,0 +1,41 @@
+{
+  "name": "coverage-problem",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "installConfig": {
+    "pnp": true
+  },
+  "nyc": {
+    "exclude-after-remap": false,
+    "cache": true,
+    "cache-dir": "./.nyc_cache",
+    "reporter": [
+      "lcov",
+      "text"
+    ],
+    "include": [
+      "packages/**/*.js"
+    ],
+    "exclude": [
+      "**/*.test.js"
+    ],
+    "check-coverage": true,
+    "lines": 100,
+    "statements": 100,
+    "functions": 100,
+    "branches": 100,
+    "all": true
+  },
+  "scripts": {
+    "test": "nyc tape packages/**/*.test.js | tap-nyc"
+  },
+  "devDependencies": {
+    "nyc": "^14.1.1",
+    "tap-nyc": "^1.0.3",
+    "tape": "^4.11.0"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@test/foo",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "tape": "^4.11.0"
+  }
+}
